@@ -5,25 +5,25 @@ export function Advantages() {
   const advantages = [
     {
       icon: Gift,
-      title: "Exklusive Boni",
+      title: "Bônus Exclusivos",
       color: "text-yellow-400",
       bg: "bg-yellow-400/20 border-yellow-400/30",
     },
     {
       icon: CreditCard,
-      title: "Schnelle Auszahlungen",
+      title: "Pagamentos rápidos",
       color: "text-yellow-400",
       bg: "bg-yellow-400/20 border-yellow-400/30",
     },
     {
       icon: Headphones,
-      title: "24/7 Support",
+      title: "24/7 Apoiar",
       color: "text-yellow-400",
       bg: "bg-yellow-400/20 border-yellow-400/30",
     },
     {
       icon: Shield,
-      title: "Lizenziert & Sicher",
+      title: "Licenciado e seguro",
       color: "text-red-600",
       bg: "/flag.png",
     },
