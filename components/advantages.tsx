@@ -21,6 +21,7 @@ export function Advantages() {
     {
       title: "Licenciado e Seguro",
       color: "text-red-400",
+      image: "/flag.png",
     },
   ]
 
@@ -31,8 +32,14 @@ export function Advantages() {
           {advantages.map((advantage, index) => (
             <div key={index} className="text-center">
               <div className="inline-flex items-center justify-center w-4 sm:w-8 h-4 sm:h-8 mb-1 sm:mb-2">
-                {advantage.title === "Licenciado e seguro" ? (
-                  <Image src="/flag.png" alt="Flag" width={32} height={32} className="object-contain" />
+                {advantage.image ? (
+                  <Image
+                    src={advantage.image || "/placeholder.svg"}
+                    alt="Flag"
+                    width={32}
+                    height={32}
+                    className="object-contain"
+                  />
                 ) : (
                   advantage.icon && <advantage.icon className={`h-4 sm:h-8 w-4 sm:w-8 ${advantage.color}`} />
                 )}
