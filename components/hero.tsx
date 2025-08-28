@@ -34,7 +34,7 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-4 text-center h-full flex flex-col justify-center">
         <div className="flex items-center justify-center mb-2 md:mb-6">
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/flag-TXXKETWHGFV0tUSmBerxA2DiFY9s5Q.png"
+            src="/flag.png"
             alt="Portugal Flag"
             className="w-8 h-6 md:w-12 md:h-9 mr-3 md:mr-4 rounded shadow-lg"
           />

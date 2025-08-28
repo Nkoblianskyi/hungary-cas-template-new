@@ -54,63 +54,55 @@ export function Footer() {
           {/* Organization Logos */}
           <div className="flex flex-wrap justify-center items-center gap-4 mb-6">
             <Link
+              href="https://www.srij.turismodeportugal.pt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent hover:bg-tech-white/10 border border-tech-gold/30 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-tech-gold hover:scale-105 group"
+            >
+              <img
+                src="/srij.svg"
+                alt="SRIJ"
+                className="h-8 md:h-10 w-auto object-contain filter brightness-90 group-hover:brightness-110"
+              />
+            </Link>
+            <Link
               href="https://www.sicad.pt"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:bg-slate-700/50 rounded-lg p-2 md:p-4 flex items-center justify-center transition-colors bg-slate-50"
+              className="bg-white hover:bg-tech-white/10 border border-tech-gold/30 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-tech-gold hover:scale-105 group"
             >
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/icad-FfeiLmNc2Ag2xKW03ngHTdFldxyzf1.png"
-                alt="ICAD"
-                className="h-8 md:h-12 w-auto object-contain"
+                src="/icad.png"
+                alt="SICAD"
+                className="h-8 md:h-10 w-auto object-contain filter brightness-90 group-hover:brightness-110"
               />
             </Link>
             <Link
               href="https://www.gamcare.org.uk"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:bg-slate-700/50 rounded-lg p-2 md:p-4 flex items-center justify-center transition-colors bg-slate-50"
+              className="bg-white hover:bg-gray-600 border border-gray-500 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-yellow-400 hover:scale-105"
             >
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gamecare-LtS86QNPP02NevvJ00SBxNtsnV8TpX.svg"
-                alt="GamCare"
-                className="h-8 md:h-12 w-auto object-contain"
-              />
-            </Link>
-            <Link
-              href="https://www.srij.turismodeportugal.pt"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:bg-slate-700/50 rounded-lg p-2 md:p-4 flex items-center justify-center transition-colors bg-slate-100"
-            >
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/srij-KVwkemHOVmr9M9sBTzRTE9poGfKBdY.svg"
-                alt="SRIJ - Serviço de Regulação e Inspeção de Jogos"
-                className="h-8 md:h-12 w-auto object-contain"
-              />
+              <img src="/gamecare.svg" alt="GamCare" className="h-8 md:h-10 w-auto object-contain" />
             </Link>
             <Link
               href="https://www.gambleaware.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:bg-slate-700/50 rounded-lg p-2 md:p-4 flex items-center justify-center transition-colors bg-slate-100"
+              className="bg-white hover:bg-gray-600 border border-gray-500 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-yellow-400 hover:scale-105"
             >
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gamble-ENaNmaq07PBtZWQHNXwVjnLBrAGuaL.webp"
-                alt="GambleAware"
-                className="h-8 md:h-12 w-auto object-contain"
-              />
+              <img src="/gamble.webp" alt="GambleAware" className="h-8 md:h-10 w-auto object-contain" />
             </Link>
             <Link
               href="https://www.jogoresponsavel.pt"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:bg-slate-700/50 rounded-lg p-2 md:p-4 flex items-center justify-center transition-colors"
+              className="bg-transparent hover:bg-tech-white/10 border border-tech-gold/30 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-tech-gold hover:scale-105 group"
             >
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jogo2-4mZ5RwAWv2B99sjJpLSzIGxeqWCyYH.png"
+                src="/jogo2.png"
                 alt="Jogo Responsável"
-                className="h-8 md:h-12 w-auto object-contain"
+                className="h-8 md:h-10 w-auto object-contain filter brightness-90 group-hover:brightness-110"
               />
             </Link>
             {/* 18+ Badge */}
