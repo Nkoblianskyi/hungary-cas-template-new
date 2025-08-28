@@ -1,5 +1,5 @@
-import { Gift, CreditCard, Headphones, Shield } from "lucide-react"
 import Image from "next/image"
+import { Gift, CreditCard, Headphones, Shield } from "lucide-react"
 
 export function Advantages() {
   const advantages = [
@@ -7,25 +7,21 @@ export function Advantages() {
       icon: Gift,
       title: "Bônus Exclusivos",
       color: "text-yellow-400",
-      bg: "bg-yellow-400/20 border-yellow-400/30",
     },
     {
       icon: CreditCard,
       title: "Pagamentos rápidos",
       color: "text-yellow-400",
-      bg: "bg-yellow-400/20 border-yellow-400/30",
     },
     {
       icon: Headphones,
       title: "24/7 Apoiar",
       color: "text-yellow-400",
-      bg: "bg-yellow-400/20 border-yellow-400/30",
     },
     {
       icon: Shield,
       title: "Licenciado e seguro",
-      color: "text-red-600",
-      bg: "/flag.png",
+      color: "text-red-400",
     },
   ]
 
@@ -35,11 +31,9 @@ export function Advantages() {
         <div className="grid grid-cols-4 gap-1 sm:gap-3 max-w-xs sm:max-w-2xl">
           {advantages.map((advantage, index) => (
             <div key={index} className="text-center">
-              <div className={`inline-flex items-center justify-center w-4 sm:w-8 h-4 sm:h-8 mb-1 sm:mb-2`}>
-                {advantage.title === "Lizenziert & Sicher" ? (
-                  <div className="h-4 sm:h-8 w-4 sm:w-8 flex items-center justify-center">
-                    <Image src='/flag.png' alt="Flag" width={32} height={32} className="object-contain" />
-                  </div>
+              <div className="inline-flex items-center justify-center w-4 sm:w-8 h-4 sm:h-8 mb-1 sm:mb-2">
+                {advantage.title === "Licenciado e seguro" ? (
+                  <Image src="/flag.png" alt="Flag" width={32} height={32} className="object-contain" />
                 ) : (
                   <advantage.icon className={`h-4 sm:h-8 w-4 sm:w-8 ${advantage.color}`} />
                 )}
