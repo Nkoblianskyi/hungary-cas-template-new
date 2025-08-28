@@ -25,7 +25,7 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Navegação</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#rankings" className="text-gray-400 hover:text-yellow-500 transition-colors">
+                <Link href="/" className="text-gray-400 hover:text-yellow-500 transition-colors">
                   Avaliações de Casinos
                 </Link>
               </li>
