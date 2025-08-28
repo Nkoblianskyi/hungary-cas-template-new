@@ -24,7 +24,7 @@ export function Advantages() {
     {
       icon: "/flag.png",
       title: "Licenciado e seguro",
-      color: "text-red-600",
+      color: "/flag.png",
       bg: "/flag.png",
     },
   ]
