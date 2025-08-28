@@ -265,7 +265,7 @@ export function HowWeRank() {
                   <div className="text-center px-0 w-82">
                     <div className="mb-4">
                       <div className="flex items-center justify-center gap-2 text-red-500 mb-3">
-                        <span className="text-xl font-medium">Bónus de Boas-vindas</span>
+                        <span className="text-xl font-medium">Bónus de Boas-Vindas</span>
                       </div>
                       <div className="text-white font-bold shadow-xl text-3xl leading-tight">{topCasino.bonus}</div>
                     </div>
