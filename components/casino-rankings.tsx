@@ -38,7 +38,7 @@ export function CasinoRankings() {
                 )}
                 {casino.rank === 3 && (
                   <Badge className="absolute -top-1 -left-1 bg-red-800 text-white font-black text-xs px-3 py-1 z-10 rounded-sm">
-                    EM ALTA
+                    TENDÊNCIAS
                   </Badge>
                 )}
                 <div className="absolute inset-0 opacity-10 pointer-events-none">
