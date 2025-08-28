@@ -28,7 +28,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://melhorescasinosportugal.com",
   },
-    generator: 'v0.app'
 }
 
 export default function RootLayout({
