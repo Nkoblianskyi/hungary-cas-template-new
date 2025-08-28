@@ -22,9 +22,9 @@ export function Advantages() {
       bg: "bg-yellow-400/20 border-yellow-400/30",
     },
     {
-      icon: "/flag.png",
+      icon: Shield,
       title: "Licenciado e seguro",
-      color: "/flag.png",
+      color: "text-red-600",
       bg: "/flag.png",
     },
   ]
