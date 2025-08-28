@@ -13,7 +13,7 @@ export const casinos: Casino[] = [
   {
     rank: 1,
     name: "Lamabet",
-    logo: "/billybets.webp",
+    logo: "/lamabet.svg",
     rating: 9.8,
     bonus: "700% Até 10 000€ + 725 GG + CashBack Até 15%",
     features: ["Saques Rápidos", "App Móvel", "15% Cashback"],
@@ -59,7 +59,7 @@ export const casinos: Casino[] = [
   {
     rank: 6,
     name: "Boomerang Bet",
-    logo: "/billybets.webp",
+    logo: "/boomerang-bet.svg",
     rating: 8.6,
     bonus: "100% Até 500€ + 200 GG",
     features: ["Saques Rápidos", "App Móvel", "Casino ao Vivo"],
