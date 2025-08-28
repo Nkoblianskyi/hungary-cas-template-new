@@ -4,18 +4,18 @@ export function Benefits() {
   const benefits = [
     {
       icon: Gift,
-      title: "Ексклюзивні бонуси",
-      description: "Отримайте найкращі вітальні пропозиції та фрібети",
+      title: "Bónus Exclusivos",
+      description: "Obtenha as melhores ofertas de boas-vindas e apostas grátis",
     },
     {
       icon: TrendingUp,
-      title: "Високі коефіцієнти",
-      description: "Найкращі коефіцієнти на популярні спортивні події",
+      title: "Odds Elevadas",
+      description: "As melhores odds nos eventos desportivos mais populares",
     },
     {
       icon: Users,
-      title: "Перевірені букмекери",
-      description: "Тільки ліцензовані та надійні оператори з відмінною репутацією",
+      title: "Casas de Apostas Verificadas",
+      description: "Apenas operadores licenciados e confiáveis com excelente reputação",
     },
   ]
 
