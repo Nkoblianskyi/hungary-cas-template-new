@@ -31,7 +31,7 @@ export function CasinoModal() {
         {/* Ribbon banner above card - stretched background image */}
         <div className="absolute -top-2 -left-8 -right-8 z-10">
           <div
-            className="relative text-black text-center py-3 px-4 sm:py-4 sm:px-8 font-black text-sm sm:text-base md:text-lg shadow-lg h-12 sm:h-14 md:h-16 flex items-center justify-center w-full"
+            className="mb-4 relative text-black text-center py-3 px-4 sm:py-4 sm:px-8 font-black text-sm sm:text-base md:text-lg shadow-lg h-12 sm:h-14 md:h-16 flex items-center justify-center w-full"
             style={{
               backgroundImage: "url('/images/ribbon-banner.png')",
               backgroundSize: "100% 100%",
@@ -70,8 +70,7 @@ export function CasinoModal() {
             <div className="mb-4 sm:mb-6">
               <p className="text-red-500 text-sm sm:text-base mb-2 font-bold">Bónus de Boas-Vindas</p>
               <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-1">
-                <span className="text-white">700% Até 10 000€ </span>
-                <span className="text-yellow-400">+ 725 GG + CashBack Até 15%</span>
+                <span className="text-yellow-400">{topCasino.bonus}</span>
               </div>
             </div>
 

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Gift, CreditCard, Headphones, Shield } from "lucide-react"
+import { Gift, CreditCard, Headphones } from "lucide-react"
 
 export function Advantages() {
   const advantages = [
@@ -10,7 +10,7 @@ export function Advantages() {
     },
     {
       icon: CreditCard,
-      title: "Pagamentos rápidos",
+      title: "Pagamentos Rápidos",
       color: "text-yellow-400",
     },
     {
@@ -19,8 +19,7 @@ export function Advantages() {
       color: "text-yellow-400",
     },
     {
-      icon: Shield,
-      title: "Licenciado e seguro",
+      title: "Licenciado e Seguro",
       color: "text-red-400",
     },
   ]
@@ -35,7 +34,7 @@ export function Advantages() {
                 {advantage.title === "Licenciado e seguro" ? (
                   <Image src="/flag.png" alt="Flag" width={32} height={32} className="object-contain" />
                 ) : (
-                  <advantage.icon className={`h-4 sm:h-8 w-4 sm:w-8 ${advantage.color}`} />
+                  advantage.icon && <advantage.icon className={`h-4 sm:h-8 w-4 sm:w-8 ${advantage.color}`} />
                 )}
               </div>
               <h3 className="text-xs sm:text-xs font-semibold text-white">{advantage.title}</h3>
