@@ -41,7 +41,7 @@ export function Hero() {
           <h1 className="text-lg md:text-5xl lg:text-6xl font-bold drop-shadow-lg leading-tight">
             <span className="text-red-600">Melhores Casinos</span>
             <span className="text-white"> Online Portugal </span>
-            <span className="text-red-500">2025</span>
+            <span className="text-red-500"><span className="text-green-500">20</span>25</span>
           </h1>
         </div>
 
