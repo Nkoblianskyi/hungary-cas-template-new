@@ -33,11 +33,11 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center h-full flex flex-col justify-center">
         <div className="flex items-center justify-center mb-2 md:mb-6">
-          <img
+          {/* <img
             src="/flag.png"
             alt="Portugal Flag"
             className="w-8 h-6 md:w-12 md:h-9 mr-3 md:mr-4 rounded shadow-lg"
-          />
+          /> */}
           <h1 className="text-lg md:text-5xl lg:text-6xl font-bold drop-shadow-lg leading-tight">
             <span className="text-red-600">Melhores Casinos</span>
             <span className="text-white"> Online Portugal </span>
