@@ -70,8 +70,11 @@ export function CasinoModal() {
             <div className="mb-4 sm:mb-6">
               <p className="text-red-500 text-sm sm:text-base mb-2 font-bold">Bónus de Boas-Vindas</p>
               <div className="text-lg sm:text-xl md:text-2xl font-bold mb-1">
-                <span className="text-yellow-400">{topCasino.bonus}</span>
+                <span className="text-yellow-400">700% até €10 000</span>
                 <br />
+                <span className="text-yellow-400">+ 725 Rodadas Grátis</span>
+                <br />
+                <span className="text-yellow-400"> + CashBack Até 15%</span>
 
               </div>
             </div>
@@ -85,7 +88,7 @@ export function CasinoModal() {
               </div>
               <div className="text-lg sm:text-xl font-bold text-white">
                 {topCasino.rating.toFixed(1)}
-                <span className="text-gray-400 text-sm sm:text-base">/10</span>
+                <span className="text-gray-400 text-xl sm:text-2xl">/10</span>
               </div>
             </div>
 

@@ -110,7 +110,7 @@ export function CasinoRankings() {
                       </div>
                       <div className="flex items-center justify-center gap-2 mt-2">
                         <StarRating rating10={casino.rating} size="h-3 w-3" gapClass="gap-1" />
-                        <span className="text-white font-semibold text-sm">{casino.rating.toFixed(1)}</span>
+                        <span className="text-white font-semibold text-2xl">{casino.rating.toFixed(1)}</span>
                       </div>
                     </div>
 
@@ -119,7 +119,7 @@ export function CasinoRankings() {
                       <div className="flex items-center justify-center gap-1 text-red-500 mb-2">
                         <span className="text-sm font-medium">Bónus de Boas-Vindas</span>
                       </div>
-                      <div className="text-white font-bold text-base leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
+                      <div className="text-white font-bold text-lg leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
                         {casino.bonus}
                       </div>
                     </div>
@@ -169,7 +169,7 @@ export function CasinoRankings() {
                         {/* Rating under logo */}
                         <div className="flex items-center justify-center gap-2">
                           <StarRating rating10={casino.rating} size="h-4 w-4" />
-                          <span className="text-white font-semibold text-xl">{casino.rating.toFixed(1)}</span>
+                          <span className="text-white font-semibold text-2xl">{casino.rating.toFixed(1)}</span>
                         </div>
                       </div>
                     </div>
@@ -243,7 +243,7 @@ export function CasinoRankings() {
                         {/* Rating under logo */}
                         <div className="flex items-center justify-center gap-3">
                           <StarRating rating10={casino.rating} size="h-5 w-5" />
-                          <span className="text-white font-semibold text-2xl">{casino.rating.toFixed(1)}</span>
+                          <span className="text-white font-semibold text-4xl">{casino.rating.toFixed(1)}</span>
                         </div>
                       </div>
                     </div>
