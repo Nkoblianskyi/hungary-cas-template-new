@@ -6,6 +6,51 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { casinos } from "@/data/casinos"
 
+/** Рендер однієї частково заповненої зірки */
+function PartialStar({
+  fillPercent,
+  size = "h-4 w-4",
+}: {
+  /** 0..100 — скільки % зірки залито */
+  fillPercent: number
+  size?: string
+}) {
+  const clamped = Math.max(0, Math.min(100, fillPercent))
+  return (
+    <div className={`relative inline-block ${size}`} aria-hidden="true">
+      {/* Базовий контур (порожня зірка з обведенням) */}
+      <Star className={`absolute inset-0 text-gray-600 ${size}`} />
+      {/* Заповнена частина */}
+      <div
+        className="absolute inset-0 overflow-hidden"
+        style={{ width: `${clamped}%` }}
+      >
+        <Star className={`text-yellow-500 fill-current ${size}`} />
+      </div>
+    </div>
+  )
+}
+
+/** Рейтинг у зірках 0..5 із кроком 0.2 (на основі rating 0..10) */
+function StarRating({
+  rating10, // 0..10
+  size = "h-4 w-4",
+  gapClass = "gap-2",
+}: {
+  rating10: number
+  size?: string
+  gapClass?: string
+}) {
+  const rating5 = Math.max(0, Math.min(10, rating10)) / 2 // 0..5
+  // Для кожної з 5 зірок рахуємо, яку частку (0..1) треба залити
+  const stars = Array.from({ length: 5 }, (_, i) => {
+    const fill = Math.max(0, Math.min(1, rating5 - i)) // 1 = повна, 0.5 = половина, 0 = порожня
+    return <PartialStar key={i} fillPercent={fill * 100} size={size} />
+  })
+
+  return <div className={`flex items-center ${gapClass}`}>{stars}</div>
+}
+
 export function CasinoRankings() {
   const handleCardClick = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer")
@@ -18,11 +63,10 @@ export function CasinoRankings() {
           {casinos.map((casino) => (
             <Card
               key={casino.rank}
-              className={`bg-gray-900 border-gray-800 cursor-pointer transition-all duration-200 relative overflow-hidden min-h-[120px] md:min-h-[140px] lg:min-h-[160px] ${
-                casino.isTopChoice
+              className={`bg-gray-900 border-gray-800 cursor-pointer transition-all duration-200 relative overflow-hidden min-h-[120px] md:min-h-[140px] lg:min-h-[160px] ${casino.isTopChoice
                   ? "ring-2 ring-yellow-400 shadow-lg shadow-red-500/20 bg-gradient-to-r from-gray-900 via-red-950/30 to-gray-900 hover:ring-yellow-300"
                   : "hover:border-red-900/50 hover:shadow-lg hover:shadow-red-500/10"
-              }`}
+                }`}
               onClick={() => handleCardClick(casino.url)}
             >
               <CardContent className="p-4 h-full flex items-center">
@@ -51,6 +95,7 @@ export function CasinoRankings() {
                     }}
                   />
                 </div>
+
                 {/* Mobile Layout (up to md) */}
                 <div className="md:hidden w-full">
                   <div className="flex items-center justify-between mb-3">
@@ -64,16 +109,7 @@ export function CasinoRankings() {
                         />
                       </div>
                       <div className="flex items-center justify-center gap-2 mt-2">
-                        <div className="flex items-center">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`h-3 w-3 ${
-                                i < Math.floor(casino.rating) ? "text-yellow-500 fill-current" : "text-gray-600"
-                              }`}
-                            />
-                          ))}
-                        </div>
+                        <StarRating rating10={casino.rating} size="h-3 w-3" gapClass="gap-1" />
                         <span className="text-white font-semibold text-sm">{casino.rating.toFixed(1)}</span>
                       </div>
                     </div>
@@ -114,9 +150,8 @@ export function CasinoRankings() {
                     <div className="flex items-center gap-4 flex-shrink-0" style={{ width: "180px" }}>
                       {/* Rank */}
                       <div
-                        className={`flex items-center justify-center w-10 h-10 rounded-full font-bold text-lg flex-shrink-0 ${
-                          casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-red-800 text-white"
-                        } relative z-10`}
+                        className={`flex items-center justify-center w-10 h-10 rounded-full font-bold text-lg flex-shrink-0 ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-red-800 text-white"
+                          } relative z-10`}
                       >
                         {casino.rank}
                       </div>
@@ -133,16 +168,7 @@ export function CasinoRankings() {
 
                         {/* Rating under logo */}
                         <div className="flex items-center justify-center gap-2">
-                          <div className="flex items-center">
-                            {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className={`h-4 w-4 ${
-                                  i < Math.floor(casino.rating) ? "text-yellow-500 fill-current" : "text-gray-600"
-                                }`}
-                              />
-                            ))}
-                          </div>
+                          <StarRating rating10={casino.rating} size="h-4 w-4" />
                           <span className="text-white font-semibold text-xl">{casino.rating.toFixed(1)}</span>
                         </div>
                       </div>
@@ -198,9 +224,8 @@ export function CasinoRankings() {
                     <div className="flex items-center gap-6 flex-shrink-0" style={{ width: "240px" }}>
                       {/* Rank */}
                       <div
-                        className={`flex items-center justify-center w-14 h-14 rounded-full font-bold text-xl flex-shrink-0 ${
-                          casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-red-800 text-white"
-                        } relative z-10`}
+                        className={`flex items-center justify-center w-14 h-14 rounded-full font-bold text-xl flex-shrink-0 ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-red-800 text-white"
+                          } relative z-10`}
                       >
                         {casino.rank}
                       </div>
@@ -217,16 +242,7 @@ export function CasinoRankings() {
 
                         {/* Rating under logo */}
                         <div className="flex items-center justify-center gap-3">
-                          <div className="flex items-center gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className={`h-5 w-5 ${
-                                  i < Math.floor(casino.rating) ? "text-yellow-500 fill-current" : "text-gray-600"
-                                }`}
-                              />
-                            ))}
-                          </div>
+                          <StarRating rating10={casino.rating} size="h-5 w-5" />
                           <span className="text-white font-semibold text-2xl">{casino.rating.toFixed(1)}</span>
                         </div>
                       </div>
