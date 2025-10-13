@@ -77,7 +77,7 @@ export function CasinoRankings() {
                 )}
                 {casino.rank === 2 && (
                   <Badge className="absolute -top-1 -left-1 bg-red-800 text-white font-black text-xs px-3 py-1 z-10 rounded-sm">
-                    POPULAR
+                    RECOMENDADO
                   </Badge>
                 )}
                 {casino.rank === 3 && (
