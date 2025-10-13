@@ -14,7 +14,6 @@ export default function HomePage() {
       <CasinoRankings />
       <HowWeRank />
       <Footer />
-      <CookieBanner />
       <CasinoModal />
     </div>
   )
