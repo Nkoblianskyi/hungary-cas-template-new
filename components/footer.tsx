@@ -57,7 +57,7 @@ export function Footer() {
               href="https://www.srij.turismodeportugal.pt"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-transparent hover:bg-tech-white/10 border border-tech-gold/30 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-tech-gold hover:scale-105 group"
+              className="bg-transparent hover:bg-white/10 border border-yellow-400/30 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-yellow-400 hover:scale-105 group"
             >
               <img
                 src="/srij.svg"
@@ -69,7 +69,7 @@ export function Footer() {
               href="https://www.sicad.pt"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white hover:bg-tech-white/10 border border-tech-gold/30 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-tech-gold hover:scale-105 group"
+              className="bg-white hover:bg-white/10 border border-yellow-400/30 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-yellow-400 hover:scale-105 group"
             >
               <img
                 src="/icad.png"
@@ -97,7 +97,7 @@ export function Footer() {
               href="https://www.jogoresponsavel.pt"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-transparent hover:bg-tech-white/10 border border-tech-gold/30 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-tech-gold hover:scale-105 group"
+              className="bg-transparent hover:bg-white/10 border border-yellow-400/30 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:border-yellow-400 hover:scale-105 group"
             >
               <img
                 src="/jogo2.png"
