@@ -24,7 +24,7 @@ export const casinos: Casino[] = [
   {
     rank: 2,
     name: "Spinogambino",
-    logo: "/aerobet.webp",
+    logo: "/spinogambino.svg",
     rating: 9.7,
     bonus: "Até 1.500€ + 250 Rodadas",
     features: ["Casino Móvel", "Jogos Exclusivos", "Apostas Desportivas"],
