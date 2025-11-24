@@ -51,7 +51,7 @@ export const casinos: Casino[] = [
     url: "https://qualityboost.top/Qqb39Lv8",
   },
   {
-    rank: 6,
+    rank: 5,
     name: "MrPacho",
     logo: "/mrpacho.svg",
     rating: 9.2,
