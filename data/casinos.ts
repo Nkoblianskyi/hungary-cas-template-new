@@ -45,7 +45,7 @@ export const casinos: Casino[] = [
     name: "BillyBets",
     logo: "/billybets.webp",
     rating: 9.4,
-    bonus: "100% até €500 + 200 Giros Grátis",
+    bonus: "100% até 150€ + 100 Rodadas Grátis",
     dopBonus: "",
     features: ["Reload bonus", "Besplatne Vrtnje", "Brza isplata"],
     url: "https://qualityboost.top/Qqb39Lv8",
