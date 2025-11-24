@@ -70,11 +70,10 @@ export function CasinoModal() {
             <div className="mb-4 sm:mb-6">
               <p className="text-red-500 text-sm sm:text-base mb-2 font-bold">Bónus de Boas-Vindas</p>
               <div className="text-lg sm:text-xl md:text-2xl font-bold mb-1">
-                <span className="text-yellow-400">700% até €10 000</span>
+                <span className="text-yellow-400">100% até 500€</span>
                 <br />
-                <span className="text-yellow-400">+ 725 Rodadas Grátis</span>
+                <span className="text-yellow-400">+ 100 Rodadas Grátis</span>
                 <br />
-                <span className="text-yellow-400"> + CashBack Até 15%</span>
 
               </div>
             </div>
