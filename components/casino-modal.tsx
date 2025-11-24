@@ -3,8 +3,15 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { X, Star } from "lucide-react"
+import { X, Star } from 'lucide-react'
 import { getTopCasino } from "@/data/casinos"
+import Link from "next/link"
+
+declare global {
+  interface Window {
+    updateLinkParams?: () => void
+  }
+}
 
 export function CasinoModal() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,13 +24,15 @@ export function CasinoModal() {
 
     return () => clearTimeout(timer)
   }, [])
+  
+  useEffect(() => {
+    if (!isOpen || typeof window === "undefined") return
+    const fn = () => window.updateLinkParams?.()
+    // @ts-ignore
+    return "requestIdleCallback" in window ? (requestIdleCallback(fn), undefined) : (setTimeout(fn, 100), undefined)
+  }, [isOpen])
 
   if (!isOpen) return null
-
-  const handleModalClick = () => {
-    window.open(topCasino.url, "_blank", "noopener,noreferrer")
-    setIsOpen(false)
-  }
 
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
@@ -70,11 +79,10 @@ export function CasinoModal() {
             <div className="mb-4 sm:mb-6">
               <p className="text-red-500 text-sm sm:text-base mb-2 font-bold">Bónus de Boas-Vindas</p>
               <div className="text-lg sm:text-xl md:text-2xl font-bold mb-1">
-                <span className="text-yellow-400">100% até 500€</span>
+                <span className="text-yellow-400">400% até €4000</span>
                 <br />
-                <span className="text-yellow-400">+ 100 Rodadas Grátis</span>
+                <span className="text-yellow-400"> + 200 FS</span>
                 <br />
-
               </div>
             </div>
 
@@ -92,15 +100,14 @@ export function CasinoModal() {
             </div>
 
             {/* CTA Button */}
-            <Button
-              className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 sm:py-3 text-sm sm:text-base"
-              onClick={(e) => {
-                e.stopPropagation()
-                handleModalClick()
-              }}
-            >
-              JOGAR AGORA
-            </Button>
+            <Link href={topCasino.url} target="_blank" rel="noopener referrer">
+              <Button
+                className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 sm:py-3 text-sm sm:text-base"
+                onClick={() => setIsOpen(false)}
+              >
+                JOGAR AGORA
+              </Button>
+            </Link>
 
             <p className="text-xs text-gray-500 text-center mt-2 sm:mt-3">
               * Aplicam-se os Termos e Condições. Apenas 18+.
