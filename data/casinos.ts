@@ -19,7 +19,7 @@ export const casinos: Casino[] = [
     bonus: "100% até 500€ + 100 Rodadas Grátis",
     features: ["Saques Rápidos", "App Móvel", "15% Cashback"],
     isTopChoice: true,
-    url: "https://qualityboost.top/ss8DCZQG",
+    url: "https://qualityboost.top/Qqb39Lv8",
   },
   {
     rank: 2,
@@ -48,7 +48,7 @@ export const casinos: Casino[] = [
     bonus: "100% até €500 + 200 Giros Grátis",
     dopBonus: "",
     features: ["Reload bonus", "Besplatne Vrtnje", "Brza isplata"],
-    url: "https://qualityboost.top/93mKYgt5",
+    url: "https://qualityboost.top/Qqb39Lv8",
   },
   {
     rank: 6,
@@ -58,7 +58,7 @@ export const casinos: Casino[] = [
     bonus: "100% até 150€ + 100 Rodadas Grátis",
     dopBonus: "",
     features: ["Besplatne Vrtnje", "Brza isplata"],
-    url: "https://qualityboost.top/3VCrr6mB",
+    url: "https://qualityboost.top/Qqb39Lv8",
   },
   // {
   //   rank: 7,
