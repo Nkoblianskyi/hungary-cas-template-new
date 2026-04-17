@@ -38,9 +38,9 @@ export function CasinoModal() {
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
       <div className="relative w-full max-w-xs sm:max-w-md md:max-w-lg lg:min-w-[400px] lg:max-w-[440px]">
         {/* Ribbon banner above card - stretched background image */}
-        <div className="absolute -top-2 -left-8 -right-8 z-10">
+        <div className="absolute -top-2 -left-4 -right-4 sm:-left-8 sm:-right-8 z-10">
           <div
-            className="mb-4 relative text-black text-center py-3 px-4 sm:py-4 sm:px-8 font-black text-sm sm:text-base md:text-lg shadow-lg h-12 sm:h-14 md:h-16 flex items-center justify-center w-full"
+            className="mb-4 relative text-black text-center py-2.5 px-2 sm:py-4 sm:px-6 font-black shadow-lg min-h-11 sm:min-h-14 flex items-center justify-center w-full"
             style={{
               backgroundImage: "url('/images/ribbon-banner.png')",
               backgroundSize: "100% 100%",
@@ -48,7 +48,9 @@ export function CasinoModal() {
               backgroundPosition: "center",
             }}
           >
-            <p className="mb-3">ESCOLHA DO EDITOR ESTA SEMANA</p>
+            <p className="text-[0.7rem] leading-tight sm:text-sm md:text-base px-1">
+              Szerkesztői ajánlat · ezen a héten
+            </p>
           </div>
         </div>
 
@@ -69,7 +71,7 @@ export function CasinoModal() {
               <div className=" shadow-lg mx-auto w-fit">
                 <img
                   src={topCasino.logo || "/placeholder.svg"}
-                  alt={`${topCasino.name} logo`}
+                  alt={`${topCasino.name} logó`}
                   className="h-12 sm:h-16 w-auto mx-auto"
                 />
               </div>
@@ -77,12 +79,9 @@ export function CasinoModal() {
 
             {/* Bonus */}
             <div className="mb-4 sm:mb-6">
-              <p className="text-red-500 text-sm sm:text-base mb-2 font-bold">Bónus de Boas-Vindas</p>
+              <p className="text-red-500 text-sm sm:text-base mb-2 font-bold">Üdvözlő bónusz</p>
               <div className="text-lg sm:text-xl md:text-2xl font-bold mb-1">
-                <span className="text-yellow-400">100% até 500€</span>
-                <br />
-                <span className="text-yellow-400">+ 100 Rodadas Grátis</span>
-                <br />
+                <span className="text-yellow-400">{topCasino.bonus}</span>
               </div>
             </div>
 
@@ -105,12 +104,12 @@ export function CasinoModal() {
                 className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 sm:py-3 text-sm sm:text-base"
                 onClick={() => setIsOpen(false)}
               >
-                JOGAR AGORA
+                JÁTSSZ MOST
               </Button>
             </Link>
 
             <p className="text-xs text-gray-500 text-center mt-2 sm:mt-3">
-              * Aplicam-se os Termos e Condições. Apenas 18+.
+              * Az Általános Szerződési Feltételek érvényesek. Csak 18 év felett.
             </p>
           </CardContent>
         </Card>

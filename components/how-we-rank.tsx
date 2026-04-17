@@ -1,6 +1,6 @@
 "use client"
 
-import { Star } from 'lucide-react'
+import { Star } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -10,56 +10,49 @@ import Link from "next/link"
 export function HowWeRank() {
   const criteria = [
     {
-      title: "Licença & Segurança",
-      description: "Avaliamos apenas casinos com licenças válidas de autoridades reconhecidas",
+      title: "Engedély és biztonság",
+      description: "Csak érvényes engedéllyel rendelkező, elismert hatóságok által felügyelt szolgáltatókat értékelünk.",
       weight: "25%",
     },
     {
-      title: "Seleção de Jogos",
-      description: "Variedade e qualidade de slots, jogos de mesa e opções de dealer ao vivo",
+      title: "Játékválaszték",
+      description: "Nyerőgépek, asztali játékok és élő osztós játékok minősége és változatossága.",
       weight: "20%",
     },
     {
-      title: "Bónus & Promoções",
-      description: "Bónus de boas-vindas, promoções contínuas e condições de apostas justas",
+      title: "Bónuszok és promóciók",
+      description: "Üdvözlő bónusz, folyamatos akciók és tisztességes megforgatási feltételek.",
       weight: "20%",
     },
     {
-      title: "Apoio ao Cliente",
-      description: "Disponibilidade 24/7, tempos de resposta e qualidade do suporte",
+      title: "Ügyfélszolgálat",
+      description: "Elérhetőség, válaszidő és a támogatás minősége (akár 24/7).",
       weight: "15%",
     },
     {
-      title: "Métodos de Pagamento",
-      description: "Saques rápidos, múltiplas opções de pagamento e taxas baixas",
+      title: "Fizetési módok",
+      description: "Gyors kifizetés, többféle fizetési opció és alacsony díjak.",
       weight: "10%",
     },
     {
-      title: "Experiência do Utilizador",
-      description: "Design do website, compatibilidade móvel e facilidade de uso geral",
+      title: "Felhasználói élmény",
+      description: "Weboldal dizájn, mobil kompatibilitás és átlátható használat.",
       weight: "10%",
     },
   ]
 
   const topCasino = getTopCasino()
-  const topCasinoExtended = {
-    ...topCasino,
-    features: ["Pagamentos Cripto", "Casino ao Vivo", "Suporte 24/7"],
-    pros: ["Excelente variedade de jogos", "Saques rápidos", "Suporte profissional", "Otimizado para móvel"],
-    cons: ["Requisitos de aposta elevados", "Horários limitados do chat ao vivo"],
-  }
 
   return (
     <section className="py-12 md:py-16 bg-gradient-to-b from-black to-gray-900">
       <div className="container mx-auto px-4">
-        {/* How We Rank Section */}
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Como <span className="text-yellow-400">Avaliamos os Casinos</span>
+            Hogyan <span className="text-yellow-400">értékeljük a kaszinókat</span>
           </h2>
           <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto">
-            A nossa equipa de especialistas utiliza um sistema de avaliação abrangente para avaliar todos os aspetos dos
-            casinos online e garantir que recebe as avaliações mais precisas e confiáveis.
+            Szakértőink átfogó rendszert alkalmaznak az online kaszinók minden fontos szempontjának vizsgálatára, hogy
+            Ön pontos és megbízható értékeléseket kaphasson.
           </p>
         </div>
 
@@ -75,14 +68,12 @@ export function HowWeRank() {
           ))}
         </div>
 
-        {/* Our Choice Section */}
         <div className="text-center mb-6 md:mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            A Nossa <span className="text-yellow-400">Escolha Principal</span>
+            A mi <span className="text-yellow-400">fő ajánlásunk</span>
           </h2>
           <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto">
-            Após testes e avaliações minuciosas, este casino destaca-se como a nossa recomendação #1 para jogadores
-            portugueses.
+            Részletes tesztek után ez a szolgáltató a #1 ajánlásunk a magyar játékosok számára.
           </p>
         </div>
 
@@ -91,7 +82,7 @@ export function HowWeRank() {
             <Card className="bg-gray-900 border-gray-800 cursor-pointer transition-all duration-200 relative overflow-hidden ring-2 ring-yellow-400 shadow-lg shadow-red-500/20 bg-gradient-to-r from-gray-900 via-red-950/30 to-gray-900 hover:ring-yellow-300">
               <CardContent className="p-4">
                 <Badge className="absolute -top-1 -left-1 bg-yellow-400 text-black font-black text-xs px-3 py-1 z-10 rounded-sm">
-                  O NOSSO FAVORITO
+                  A KEDVENCÜNK
                 </Badge>
 
                 <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -105,14 +96,13 @@ export function HowWeRank() {
                   />
                 </div>
 
-                {/* Mobile Layout (up to md) */}
                 <div className="md:hidden">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex-shrink-0 mt-3">
                       <div className="bg-transparent rounded shadow-sm relative z-10">
                         <img
                           src={topCasino.logo || "/placeholder.svg"}
-                          alt={`${topCasino.name} logo`}
+                          alt={`${topCasino.name} logó`}
                           className="h-16 w-24 object-contain"
                         />
                       </div>
@@ -131,7 +121,7 @@ export function HowWeRank() {
 
                     <div className="text-center flex-1 ml-4">
                       <div className="flex items-center justify-center gap-1 text-red-500 mb-2">
-                        <span className="text-sm font-medium">Bónus de Boas-Vindas</span>
+                        <span className="text-sm font-medium">Üdvözlő bónusz</span>
                       </div>
                       <div className="text-white font-bold text-xl leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
                         {topCasino.bonus}
@@ -147,12 +137,11 @@ export function HowWeRank() {
                       }}
                       className="font-semibold px-4 py-2 text-xs w-full max-w-xs relative z-10 shadow-lg hover:opacity-90 transition-opacity"
                     >
-                      JOGAR AGORA
+                      JÁTSSZ MOST
                     </Button>
                   </div>
                 </div>
 
-                {/* Tablet Layout (md to lg) */}
                 <div className="hidden md:block lg:hidden">
                   <div className="flex items-center justify-between gap-0">
                     <div className="flex items-center gap-4 w-48">
@@ -164,7 +153,7 @@ export function HowWeRank() {
                         <div className="bg-transparent rounded p-2 shadow-sm mb-2 mx-auto w-fit relative z-10">
                           <img
                             src={topCasino.logo || "/placeholder.svg"}
-                            alt={`${topCasino.name} logo`}
+                            alt={`${topCasino.name} logó`}
                             className="h-16 w-auto"
                           />
                         </div>
@@ -186,14 +175,14 @@ export function HowWeRank() {
                     <div className="text-center px-0 w-44">
                       <div className="mb-3">
                         <div className="flex items-center justify-center gap-1 text-red-500 mb-2">
-                          <span className="text-sm font-medium">Bónus de Boas-vindas</span>
+                          <span className="text-sm font-medium">Üdvözlő bónusz</span>
                         </div>
                         <div className="text-white font-bold text-lg leading-tight">{topCasino.bonus}</div>
                       </div>
                     </div>
 
                     <div className="flex flex-col gap-2 w-40">
-                      {topCasinoExtended.features.map((feature, index) => (
+                      {topCasino.features.map((feature, index) => (
                         <Badge
                           key={index}
                           variant="outline"
@@ -212,13 +201,12 @@ export function HowWeRank() {
                         }}
                         className="font-semibold px-2 py-3 text-xs w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity"
                       >
-                        JOGAR AGORA
+                        JÁTSSZ MOST
                       </Button>
                     </div>
                   </div>
                 </div>
 
-                {/* Desktop Layout (lg and up) */}
                 <div className="hidden lg:flex">
                   <div className="flex items-center justify-between gap-0 w-full">
                     <div className="flex items-center gap-6 w-72">
@@ -230,7 +218,7 @@ export function HowWeRank() {
                         <div className="bg-transparent rounded p-3 shadow-sm mb-2 mt-3 mx-auto w-fit relative z-10">
                           <img
                             src={topCasino.logo || "/placeholder.svg"}
-                            alt={`${topCasino.name} logo`}
+                            alt={`${topCasino.name} logó`}
                             className="h-24 w-auto"
                           />
                         </div>
@@ -252,14 +240,14 @@ export function HowWeRank() {
                     <div className="text-center px-0 w-82">
                       <div className="mb-4">
                         <div className="flex items-center justify-center gap-2 text-red-500 mb-3">
-                          <span className="text-xl font-medium">Bónus de Boas-Vindas</span>
+                          <span className="text-xl font-medium">Üdvözlő bónusz</span>
                         </div>
                         <div className="text-white font-bold shadow-xl text-3xl leading-tight">{topCasino.bonus}</div>
                       </div>
                     </div>
 
                     <div className="flex flex-col items-center gap-3 w-32">
-                      {topCasinoExtended.features.map((feature, index) => (
+                      {topCasino.features.map((feature, index) => (
                         <Badge
                           key={index}
                           variant="outline"
@@ -278,7 +266,7 @@ export function HowWeRank() {
                         }}
                         className="font-semibold px-3 py-4 text-sm w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity"
                       >
-                        JOGAR AGORA
+                        JÁTSSZ MOST
                       </Button>
                     </div>
                   </div>

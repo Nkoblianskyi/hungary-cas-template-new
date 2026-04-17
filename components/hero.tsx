@@ -3,64 +3,54 @@
 import { Advantages } from "./advantages"
 
 export function Hero() {
-  // Get current month and year
   const currentDate = new Date()
   const monthNames = [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro",
+    "január",
+    "február",
+    "március",
+    "április",
+    "május",
+    "június",
+    "július",
+    "augusztus",
+    "szeptember",
+    "október",
+    "november",
+    "december",
   ]
   const currentMonth = monthNames[currentDate.getMonth()]
   const currentYear = currentDate.getFullYear()
 
   return (
     <section
-      className="relative bg-cover bg-center bg-no-repeat py-4 md:py-12 max-h-[200px] md:max-h-none overflow-hidden"
+      className="relative bg-cover bg-center bg-no-repeat py-7 md:py-12 min-h-[200px] sm:min-h-[280px] md:min-h-0 overflow-hidden"
       style={{ backgroundImage: "url('/bg.jpg')" }}
     >
-      {/* Black semi-transparent overlay */}
       <div className="absolute inset-0 bg-black/70"></div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center h-full flex flex-col justify-center">
-        <div className="flex items-center justify-center mb-2 md:mb-6">
-          {/* <img
-            src="/flag.png"
-            alt="Portugal Flag"
-            className="w-8 h-6 md:w-12 md:h-9 mr-3 md:mr-4 rounded shadow-lg"
-          /> */}
-          <h1 className="text-lg md:text-5xl lg:text-6xl font-bold drop-shadow-lg leading-tight">
-            <span className="text-red-600">Melhores Casinos</span>
-            <span className="text-white"> Online Portugal </span>
-            <span className="text-red-500"><span className="text-green-500">20</span>25</span>
+      <div className="relative z-10 container mx-auto px-3 sm:px-4 text-center flex flex-col justify-center">
+        <div className="mb-2 md:mb-6">
+          <h1 className="font-bold drop-shadow-lg leading-snug md:leading-tight text-balance max-w-4xl mx-auto text-lg sm:text-3xl md:text-5xl lg:text-6xl">
+            <span className="text-red-600">Legjobb online kaszinók</span>
+            <span className="text-white"> Magyarországon </span>
           </h1>
         </div>
 
-        <p className="text-sm md:text-xl text-gray-200 max-w-3xl mx-auto drop-shadow-md mb-3 md:mb-8 leading-tight">
-          Descubra os melhores bónus, levantamentos mais rápidos e casinos online mais confiáveis!
+        <p className="text-xs sm:text-sm md:text-lg text-gray-200 max-w-3xl mx-auto drop-shadow-md mb-4 md:mb-8 leading-snug px-1">
+          A legjobb bónuszok, a leggyorsabb kifizetések és a legmegbízhatóbb online kaszinók egy helyen.
         </p>
 
-        <div className="block md:hidden">
+        <div className="block md:hidden mb-2">
           <Advantages />
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:block mb-2">
           <Advantages />
         </div>
 
-        {/* Rating update info */}
-        <div className="mt-2 md:mt-4">
-          <p className="text-xs text-gray-400">
-            Avaliações atualizadas mensalmente • Última atualização: {currentMonth} {currentYear}
+        <div className="mt-1 md:mt-4">
+          <p className="text-[10px] sm:text-xs text-gray-400 px-1">
+            Az értékelések havonta frissülnek • Utolsó frissítés: {currentMonth} {currentYear}
           </p>
         </div>
       </div>

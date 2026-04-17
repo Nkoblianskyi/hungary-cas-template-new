@@ -3,13 +3,12 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin", "latin-ext"] })
 
 export const metadata: Metadata = {
-  title: "Melhores Casinos Online Portugal 2025 | Sites de Casino Mais Bem Avaliados",
+  title: "Legjobb online kaszinók Magyarországon 2026 | Legmagasabbra értékelt oldalak",
   description:
-    "Descubra os melhores casinos online em Portugal para 2025. Compare bónus, avaliações e funcionalidades dos sites de casino mais bem avaliados. Operadores licenciados com saques rápidos e suporte 24/7.",
-
+    "Fedezze fel 2026 legjobb online kaszinóit Magyarországon. Hasonlítsa össze a bónuszokat, értékeléseket és funkciókat. Megbízható, gyors kifizetés és ügyfélszolgálat.",
 }
 
 export default function RootLayout({
@@ -18,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-PT">
+    <html lang="hu">
       <body className={inter.className}>{children}</body>
     </html>
   )

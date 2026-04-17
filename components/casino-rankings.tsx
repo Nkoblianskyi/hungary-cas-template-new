@@ -7,21 +7,17 @@ import { Badge } from "@/components/ui/badge"
 import { casinos } from "@/data/casinos"
 import Link from "next/link"
 
-/** Рендер однієї частково заповненої зірки */
 function PartialStar({
   fillPercent,
   size = "h-4 w-4",
 }: {
-  /** 0..100 — скільки % зірки залито */
   fillPercent: number
   size?: string
 }) {
   const clamped = Math.max(0, Math.min(100, fillPercent))
   return (
     <div className={`relative inline-block ${size}`} aria-hidden="true">
-      {/* Базовий контур (порожня зірка з обведенням) */}
       <Star className={`absolute inset-0 text-gray-600 ${size}`} />
-      {/* Заповнена частина */}
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${clamped}%` }}>
         <Star className={`text-yellow-500 fill-current ${size}`} />
       </div>
@@ -29,9 +25,8 @@ function PartialStar({
   )
 }
 
-/** Рейтинг у зірках 0..5 із кроком 0.2 (на основі rating 0..10) */
 function StarRating({
-  rating10, // 0..10
+  rating10,
   size = "h-4 w-4",
   gapClass = "gap-2",
 }: {
@@ -39,10 +34,9 @@ function StarRating({
   size?: string
   gapClass?: string
 }) {
-  const rating5 = Math.max(0, Math.min(10, rating10)) / 2 // 0..5
-  // Для кожної з 5 зірок рахуємо, яку частку (0..1) треба залити
+  const rating5 = Math.max(0, Math.min(10, rating10)) / 2
   const stars = Array.from({ length: 5 }, (_, i) => {
-    const fill = Math.max(0, Math.min(1, rating5 - i)) // 1 = повна, 0.5 = половина, 0 = порожня
+    const fill = Math.max(0, Math.min(1, rating5 - i))
     return <PartialStar key={i} fillPercent={fill * 100} size={size} />
   })
 
@@ -66,17 +60,17 @@ export function CasinoRankings() {
                 <CardContent className="p-4 h-full flex items-center">
                   {casino.isTopChoice && (
                     <Badge className="absolute -top-1 -left-1 bg-yellow-400 text-black font-black text-xs px-3 py-1 z-10 rounded-sm">
-                      MELHOR CASINO
+                      LEGJOBB KASZINÓ
                     </Badge>
                   )}
                   {casino.rank === 2 && (
                     <Badge className="absolute -top-1 -left-1 bg-red-800 text-white font-black text-xs px-3 py-1 z-10 rounded-sm">
-                      RECOMENDADO
+                      AJÁNLOTT
                     </Badge>
                   )}
                   {casino.rank === 3 && (
                     <Badge className="absolute -top-1 -left-1 bg-red-800 text-white font-black text-xs px-3 py-1 z-10 rounded-sm">
-                      TENDÊNCIAS
+                      NÉPSZERŰ
                     </Badge>
                   )}
                   <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -93,12 +87,11 @@ export function CasinoRankings() {
                   {/* Mobile Layout (up to md) */}
                   <div className="md:hidden w-full">
                     <div className="flex items-center justify-between mb-3">
-                      {/* Logo */}
                       <div className="flex-shrink-0">
                         <div className="bg-transparent rounded shadow-sm relative z-10 p-1">
                           <img
                             src={casino.logo || "/placeholder.svg"}
-                            alt={`${casino.name} logo`}
+                            alt={`${casino.name} logó`}
                             className="h-14 object-contain max-w-[140px] w-auto"
                           />
                         </div>
@@ -108,27 +101,25 @@ export function CasinoRankings() {
                         </div>
                       </div>
 
-                      {/* Bonus */}
                       <div className="text-center flex-1 ml-6">
                         <div className="flex items-center justify-center gap-1 text-red-500 mb-2">
-                          <span className="text-sm font-medium">Bónus de Boas-Vindas</span>
+                          <span className="text-xs font-medium">Üdvözlő bónusz</span>
                         </div>
-                        <div className="text-white font-bold text-lg leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
+                        <div className="text-white font-bold text-sm leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
                           {casino.bonus}
                         </div>
                       </div>
                     </div>
 
-                    {/* Button - Center */}
                     <div className="text-center">
                       <Button
                         style={{
                           backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",
                           color: casino.isTopChoice ? "#000000" : "#ffffff",
                         }}
-                        className={`font-semibold px-4 py-2 text-xs w-full max-w-xs relative z-10 shadow-lg hover:opacity-90 transition-opacity`}
+                        className="font-semibold px-4 py-2 text-xs w-full max-w-xs relative z-10 shadow-lg hover:opacity-90 transition-opacity"
                       >
-                        JOGAR AGORA
+                        JÁTSSZ MOST
                       </Button>
                     </div>
                   </div>
@@ -152,7 +143,7 @@ export function CasinoRankings() {
                           <div className="bg-transparent rounded shadow-sm mb-1 mx-auto w-fit relative z-10 p-0.5">
                             <img
                               src={casino.logo || "/placeholder.svg"}
-                              alt={`${casino.name} logo`}
+                              alt={`${casino.name} logó`}
                               className="h-10 object-contain max-w-[85px] w-auto"
                             />
                           </div>
@@ -168,7 +159,7 @@ export function CasinoRankings() {
                       {/* Center Column: Bonus */}
                       <div className="text-center flex-1" style={{ maxWidth: "220px" }}>
                         <div className="flex items-center justify-center gap-1 text-red-500 mb-0.5">
-                          <span className="text-[10px] font-medium">Bónus de Boas-vindas</span>
+                          <span className="text-[10px] font-medium">Üdvözlő bónusz</span>
                         </div>
                         <div className="text-white font-bold text-xs leading-tight">{casino.bonus}</div>
                       </div>
@@ -198,7 +189,7 @@ export function CasinoRankings() {
                           }}
                           className={`font-semibold px-1.5 py-2 text-[10px] w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity leading-tight`}
                         >
-                          JOGAR AGORA
+                          JÁTSSZ MOST
                         </Button>
                       </div>
                     </div>
@@ -206,9 +197,9 @@ export function CasinoRankings() {
 
                   {/* Desktop Layout (lg and up) */}
                   <div className="hidden lg:block w-full">
-                    <div className="flex items-center justify-between gap-6">
+                    <div className="flex items-center justify-between gap-4 xl:gap-6">
                       {/* Left Column: Rank + Casino Info */}
-                      <div className="flex items-center gap-6 flex-shrink-0" style={{ width: "240px" }}>
+                      <div className="flex items-center gap-4 xl:gap-6 flex-shrink-0 w-[210px] xl:w-[240px]">
                         {/* Rank */}
                         <div
                           className={`flex items-center justify-center w-14 h-14 rounded-full font-bold text-xl flex-shrink-0 ${
@@ -223,7 +214,7 @@ export function CasinoRankings() {
                           <div className="bg-transparent rounded shadow-sm mb-2 mx-auto w-fit relative z-10 p-1">
                             <img
                               src={casino.logo || "/placeholder.svg"}
-                              alt={`${casino.name} logo`}
+                              alt={`${casino.name} logó`}
                               className="h-24 object-contain max-w-[200px] w-auto"
                             />
                           </div>
@@ -237,18 +228,15 @@ export function CasinoRankings() {
                       </div>
 
                       {/* Center Column: Bonus */}
-                      <div className="text-center flex-shrink-0" style={{ width: "400px" }}>
+                      <div className="text-center flex-shrink-0 w-[320px] xl:w-[400px]">
                         <div className="flex items-center justify-center gap-2 text-red-500 mb-3">
-                          <span className="text-xl font-medium">Bónus de Boas-Vindas</span>
+                          <span className="text-xl font-medium">Üdvözlő bónusz</span>
                         </div>
                         <div className="text-white font-bold shadow-xl leading-tight text-2xl">{casino.bonus}</div>
                       </div>
 
                       {/* Features Column */}
-                      <div
-                        className="flex flex-col gap-3 flex-1 min-h-[100px] justify-center"
-                        style={{ maxWidth: "180px" }}
-                      >
+                      <div className="flex flex-col gap-3 flex-1 min-h-[100px] justify-center max-w-[150px] xl:max-w-[180px]">
                         {casino.features.map((feature, index) => (
                           <Badge
                             key={index}
@@ -261,7 +249,7 @@ export function CasinoRankings() {
                       </div>
 
                       {/* Right Column: Button */}
-                      <div className="flex-shrink-0" style={{ width: "140px" }}>
+                      <div className="flex-shrink-0 w-[120px] xl:w-[140px]">
                         <Button
                           style={{
                             backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",
@@ -269,7 +257,7 @@ export function CasinoRankings() {
                           }}
                           className={`font-semibold px-3 py-4 text-sm w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity`}
                         >
-                          JOGAR AGORA
+                          JÁTSSZ MOST
                         </Button>
                       </div>
                     </div>
@@ -282,7 +270,7 @@ export function CasinoRankings() {
 
         <div className="text-center mt-12">
           <p className="text-gray-500 text-sm">
-            * Aplicam-se os Termos e Condições. O jogo pode causar dependência. +18
+            * Az Általános Szerződési Feltételek érvényesek. A szerencsejáték függőséget okozhat. 18+
           </p>
         </div>
       </div>
