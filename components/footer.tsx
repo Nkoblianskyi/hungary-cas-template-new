@@ -29,22 +29,6 @@ export function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-wrap justify-center items-center gap-3 mb-6">
             <Link
-              href="https://sztfh.gov.hu/hu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={authorityLinkClass}
-            >
-              SZTFH
-            </Link>
-            <Link
-              href="https://www.felelossegteljesjatek.hu/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={authorityLinkClass}
-            >
-              Felelős játék
-            </Link>
-            <Link
               href="https://www.gamcare.org.uk"
               target="_blank"
               rel="noopener noreferrer"
